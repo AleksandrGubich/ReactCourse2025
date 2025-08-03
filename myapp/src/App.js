@@ -5,6 +5,17 @@ export const Header = () => {
   return <h2>Hello world</h2>;
 };
 
+const WhoAmI = ({ name, surname, link }) => {
+  return (
+    <div>
+      <h1>
+        My name is {name.firstName}, surname - {surname}
+      </h1>
+      <a href={link}>My profile</a>
+    </div>
+  );
+};
+
 // export const Field = () => {
 //   const holder = "Enter here";
 //   const styledField = {
@@ -45,6 +56,12 @@ function App() {
       {/* <Fields /> */}
       <FieldClass />
       <Btn />
+      <WhoAmI
+        name={{ firstName: "John" }}
+        surname="Smith"
+        link="facebook.com"
+      />
+      <WhoAmI name="Alex" surname="Shepard" link="vk.com" />
     </div>
   );
 }
