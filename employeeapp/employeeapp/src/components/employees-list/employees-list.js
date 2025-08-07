@@ -2,7 +2,7 @@ import EmployeesListItem from "../employees-list-item/employees-list-item";
 
 import "./employees-list.css";
 
-const EmployeesList = ({ data }) => {
+const EmployeesList = ({ data, onDelete }) => {
   const elements = data.map((item) => {
     const { id, ...itemprops } = item;
 
@@ -11,6 +11,7 @@ const EmployeesList = ({ data }) => {
         // name={elem.name} salary={elem.salary}
         {...itemprops}
         key={id}
+        onDelete={() => onDelete(id)}
       />
     );
   });
